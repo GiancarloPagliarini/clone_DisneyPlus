@@ -1,0 +1,26 @@
+{
+  "name": "mod21_disneyplus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiancarloPagliarini/clone_DisneyPlus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GiancarloPagliarini/clone_DisneyPlus/issues"
+  },
+  "homepage": "https://github.com/GiancarloPagliarini/clone_DisneyPlus#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.62.0"
+  }
+}
