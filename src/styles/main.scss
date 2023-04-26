@@ -6,6 +6,7 @@
 @use './available-devices';
 @use './faq';
 @use './footer';
+@use './header';
 
 @font-face {
     font-family: Avenir;
@@ -34,20 +35,28 @@ body {
     background-color: variables.$backgroundColorPage;
 }
 
-li {
-    list-style: none;
-}
-
 .text--big {
-    @include text(18px)
+    @include text(18px);
+
+    @media (max-width: 768px) {
+        @include text(15px)
+    }
 }
 
 .text {
-    @include text
+    @include text;
+
+    @media (max-width: 768px) {
+        @include text(14px)
+    }
 }
 
 .text--small {
-    @include text(12px)
+    @include text(12px);
+
+    @media (max-width: 768px) {
+        @include text(11px)
+    }
 }
 
 .link-text {
@@ -57,15 +66,27 @@ li {
 }
 
 .title--big {
-    @include title(44px)
+    @include title(44px);
+
+    @media (max-width: 768px) {
+        @include title(26px)
+    }
 }
 
 .title {
-    @include title
+    @include title;
+
+    @media (max-width: 768px) {
+        @include title(24px)
+    }
 }
 
 .title--small {
-    @include title(28px)
+    @include title(28px);
+
+    @media (max-width: 768px) {
+        @include title(22px)
+    }
 }
 
 .button {
@@ -73,14 +94,41 @@ li {
     display: block;
     width: 100%;
     height: 60px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
     font-size: 18px;
     color: variables.$colorTextSecondary;
-    background-color: variables.$colorButton;
+    background-color: variables.$colorButtonPrimary;
     text-transform: uppercase;
     border-radius: 4px;
-    border: none;
+    border: 1px solid variables.$colorButtonPrimary;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: lighten(variables.$colorButtonPrimary, 4%);
+    }
+
+    &--secondary {
+        background-color: variables.$colorButtonSecondary;
+        border-color: variables.$colorButtonSecondary;
+
+        &:hover {
+            background-color: lighten(variables.$colorButtonSecondary, 4%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variables.$colorButtonDark, 0.8);
+        border-color: variables.$colorTextSecondary;
+
+        &:hover {
+            background-color: variables.$colorTextSecondary;
+            color: variables.$backgroundColorPage;
+        }
+
+    }
+
+
 }
 
 .image-text-section {
@@ -88,6 +136,10 @@ li {
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
     padding: 5.6vw;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
 
     img {
         max-width: 100%;
@@ -104,7 +156,7 @@ li {
     &--image-full-width {
         display: block;
         position: relative;
-        
+
         img {
             width: 100%;
         }
@@ -118,6 +170,12 @@ li {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }
